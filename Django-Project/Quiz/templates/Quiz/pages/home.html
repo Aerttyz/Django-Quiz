@@ -4,13 +4,9 @@
     {% include "Quiz/partials/search.html" %}
 <main class="main-content-container">
         <div class="main-content  main-content-list  container">
+            {% for quiz in Quiz %}
             {% include "Quiz/partials/quizs.html" %}
-            {% include "Quiz/partials/quizs.html" %}
-            {% include "Quiz/partials/quizs.html" %}
-            {% include "Quiz/partials/quizs.html" %}
-            {% include "Quiz/partials/quizs.html" %}
-            {% include "Quiz/partials/quizs.html" %}
-            
+            {% endfor %}
         </div>
     </main>
 {% include "Quiz/partials/footer.html" %}
