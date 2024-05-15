@@ -2,29 +2,28 @@
 
 
 {% block second_content %}
-
-    <div class="quiz-content">
-        <p>desc</p>
+{% for question in questions %}
+    <div class="quiz quiz-list-item">
+        <div class="quiz-content">
+            <p>{{ question.question_text }}</p>
+        </div>
+        <footer class="quiz-footer quiz">
+        
+            <a class="quiz-read-more button button-dark button-full-width" href="/Quiz/2049c727-3207-4a89-81b1-c5ecfe8c9c95/">
+                <span>N SABO</span>
+            </a>
+            <a class="quiz-read-more button button-dark button-full-width" href="/Quiz/2049c727-3207-4a89-81b1-c5ecfe8c9c95/">
+                <span>N SABO</span>
+            </a>
+            <a class="quiz-read-more button button-dark button-full-width" href="/Quiz/2049c727-3207-4a89-81b1-c5ecfe8c9c95/">
+                <span>N SABO</span>
+            </a>
+            <a class="quiz-read-more button button-dark button-full-width" href="/Quiz/2049c727-3207-4a89-81b1-c5ecfe8c9c95/">
+                <span>N SABO</span>
+            </a>
+        </footer>
     </div>
-    <footer class="quiz-footer quiz">
-        <a class="quiz-read-more button button-dark button-full-width" href="/Quiz/2049c727-3207-4a89-81b1-c5ecfe8c9c95/">
-            <i class="fas fa-book"></i>
-            <span>resp 1</span>
-        </a>
-        <a class="quiz-read-more button button-dark button-full-width" href="/Quiz/2049c727-3207-4a89-81b1-c5ecfe8c9c95/">
-            <i class="fas fa-book"></i>
-            <span>resp 2</span>
-        </a>
-        <a class="quiz-read-more button button-dark button-full-width" href="/Quiz/2049c727-3207-4a89-81b1-c5ecfe8c9c95/">
-            <i class="fas fa-book"></i>
-            <span>resp 3</span>
-        </a>
-        <a class="quiz-read-more button button-dark button-full-width" href="/Quiz/2049c727-3207-4a89-81b1-c5ecfe8c9c95/">
-            <i class="fas fa-book"></i>
-            <span>resp 4</span>
-        </a>
-    </footer>
-
-
+{% endfor %}
+    
 
 {% endblock second_content %}

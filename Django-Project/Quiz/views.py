@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Quiz, Question, Option
 
 
@@ -8,8 +8,9 @@ def home(request):
 
 
 def quiz(request, id):
-    question = Question.objects.get(quiz_uuid=id)
-    return render(request, 'Quiz/pages/quiz.html', context={'Question': question})
+    quiz = get_object_or_404(Quiz, uuid=id, is_published=True)
+    questions = quiz.question_set.all()
+    return render(request, 'Quiz/pages/quiz.html', context={'quiz': quiz, 'questions': questions})
 
 
 def create_quiz(request):
