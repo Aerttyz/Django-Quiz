@@ -1,9 +1,9 @@
 from django.urls import path
-from Quiz.views import home, quiz, cadastrar_quiz
+from . import views
 
 
 urlpatterns = [
-    path('', home),
-    path('Quiz/', quiz),
-    path('Cadastrar_Quiz/', cadastrar_quiz)
+    path('', views.home),
+    path('Quiz/<uuid:id>/', views.quiz),
+    path('Create_quiz/', views.create_quiz)
 ]

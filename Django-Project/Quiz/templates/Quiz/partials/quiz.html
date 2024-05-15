@@ -1,31 +1,33 @@
-<div class="quiz quiz-list-item">
-    <div class="quiz-cover">
-        <img src="https://placehold.jp/269fe6/ffffff/1280x720.png" alt="temp">
-    </div>
-    <div class="quiz-title-container">
-        <h2 class="quiz-title">AAAAAAAAAAALorem ipsum dolor sit amet.</h2>
-    </div>
+{% extends "Quiz/partials/base_quiz.html" %}
 
-    <div class="quiz-author">
-        <span class="quiz-author-item">
-            <i class="fas fa-user"></i>
-            RIVOTRIL
-        </span>
-        <span class="quiz-author-item">
-            <i class="fas fa-calendar-alt"></i>
-            16/10/2021 às 11:21
-        </span>
-    </div>
+
+{% block second_content %}
+<div class="quiz quiz-list-item">
+    
 
     <div class="quiz-content">
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat commodi ullam quas modi.
             Ea cumque labore veniam, sequi corrupti quas beatae fuga alias quae, vero dicta accusamus
             aliquam in!</p>
     </div>
-    <footer class="quiz-footer">
-        <a class="quiz-read-more button button-dark button-full-width" href="/quizs/3/">
+    <footer class="quiz-footer quiz">
+        <a class="quiz-read-more button button-dark button-full-width" href="/Quiz/2049c727-3207-4a89-81b1-c5ecfe8c9c95/">
             <i class="fas fa-book"></i>
-            <span>Inciar Quiz</span>
+            <span>resp 1</span>
+        </a>
+        <a class="quiz-read-more button button-dark button-full-width" href="/Quiz/2049c727-3207-4a89-81b1-c5ecfe8c9c95/">
+            <i class="fas fa-book"></i>
+            <span>resp 2</span>
+        </a>
+        <a class="quiz-read-more button button-dark button-full-width" href="/Quiz/2049c727-3207-4a89-81b1-c5ecfe8c9c95/">
+            <i class="fas fa-book"></i>
+            <span>resp 3</span>
+        </a>
+        <a class="quiz-read-more button button-dark button-full-width" href="/Quiz/2049c727-3207-4a89-81b1-c5ecfe8c9c95/">
+            <i class="fas fa-book"></i>
+            <span>resp 4</span>
         </a>
     </footer>
 </div>
+
+{% endblock second_content %}
