@@ -5,6 +5,7 @@ from User.models import User
 class Quiz(models.Model):
     uuid = models.UUIDField(primary_key=True)
     title = models.CharField(max_length=255)
+    image = models.ImageField(null=True)
     description = models.TextField()
     is_published = models.BooleanField(default=False)
 

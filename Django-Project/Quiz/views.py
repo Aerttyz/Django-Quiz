@@ -11,3 +11,7 @@ def quiz(request, id):
 
 def create_quiz(request):
     return render(request, 'Quiz/pages/create_quiz.html')
+
+
+def login(request):
+    return render(request, 'Quiz/pages/login.html')
