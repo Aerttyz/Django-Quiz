@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="quiz-cover">
-    <img src="{{quiz.image.url}}" alt="temp">
+    <img class="quiz-image" src="{{quiz.image.url}}" alt="temp">
     </div>
 
 <div class="quiz-title-container">
@@ -13,7 +13,7 @@
 <div class="quiz-author">
     <span class="quiz-author-item">
         <i class="fas fa-user"></i>
-        {{quiz.uuid}}
+        {{quiz.author}}
     </span>
     <span class="quiz-author-item">
         <i class="fas fa-calendar-alt"></i>

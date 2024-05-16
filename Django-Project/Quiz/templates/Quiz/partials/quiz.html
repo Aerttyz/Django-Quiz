@@ -8,20 +8,13 @@
             <p>{{ question.question_text }}</p>
         </div>
         <footer class="quiz-footer quiz">
-        
-            <a class="quiz-read-more button button-dark button-full-width" href="/Quiz/2049c727-3207-4a89-81b1-c5ecfe8c9c95/">
-                <span>N SABO</span>
+        {% for option in question.options %}
+            <a class="quiz-read-more button button-dark button-full-width" href="/">
+                <span>{{option.option_text}}</span>
             </a>
-            <a class="quiz-read-more button button-dark button-full-width" href="/Quiz/2049c727-3207-4a89-81b1-c5ecfe8c9c95/">
-                <span>N SABO</span>
-            </a>
-            <a class="quiz-read-more button button-dark button-full-width" href="/Quiz/2049c727-3207-4a89-81b1-c5ecfe8c9c95/">
-                <span>N SABO</span>
-            </a>
-            <a class="quiz-read-more button button-dark button-full-width" href="/Quiz/2049c727-3207-4a89-81b1-c5ecfe8c9c95/">
-                <span>N SABO</span>
-            </a>
+        {% endfor %}
         </footer>
+        
     </div>
 {% endfor %}
     
