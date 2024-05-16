@@ -15,6 +15,15 @@ class QuizForm(forms.ModelForm):
             'is_published': forms.CheckboxInput(attrs={'class': 'form-check-input'}),  # noqa: E501
             'creator_uuid': forms.Select(attrs={'class': 'form-control'}),
         }
+    required_css_class = 'required-field'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name in self.fields:
+            field = self.fields[field_name]
+            if field.required:
+                field.widget.attrs['class'] = field.widget.attrs.get(
+                    'class', '') + ' ' + self.required_css_class
 
 
 class QuestionForm(forms.ModelForm):
@@ -25,6 +34,15 @@ class QuestionForm(forms.ModelForm):
             'question_text': forms.TextInput(attrs={'class': 'form-control'}),
             'quiz_uuid': forms.Select(attrs={'class': 'form-control'}),
         }
+    required_css_class = 'required-field'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name in self.fields:
+            field = self.fields[field_name]
+            if field.required:
+                field.widget.attrs['class'] = field.widget.attrs.get(
+                    'class', '') + ' ' + self.required_css_class
 
 
 class OptionForm(forms.ModelForm):
@@ -36,6 +54,15 @@ class OptionForm(forms.ModelForm):
             'is_correct': forms.CheckboxInput(attrs={'class': 'form-check-input'}),  # noqa: E501
             'question': forms.Select(attrs={'class': 'form-control'}),
         }
+    required_css_class = 'required-field'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name in self.fields:
+            field = self.fields[field_name]
+            if field.required:
+                field.widget.attrs['class'] = field.widget.attrs.get(
+                    'class', '') + ' ' + self.required_css_class
 
 
 class UserForm(forms.ModelForm):
@@ -49,3 +76,12 @@ class UserForm(forms.ModelForm):
             'password': forms.PasswordInput(attrs={'class': 'form-control'}),
             'is_active': forms.CheckboxInput(attrs={'class': 'form-check-input'}),  # noqa: E501
         }
+    required_css_class = 'required-field'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name in self.fields:
+            field = self.fields[field_name]
+            if field.required:
+                field.widget.attrs['class'] = field.widget.attrs.get(
+                    'class', '') + ' ' + self.required_css_class

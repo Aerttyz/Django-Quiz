@@ -10,17 +10,27 @@
         </div>
         <div  class="second-header container">
                  <h2>
-                    <ul class="list-navbar" style="text-decoration: none;">
-                        <li >
-                            <a href="Create_user/" style="text-decoration: none; color: white;">Entrar</a>
-                        </li>
-                        <li >  
-                            <a href="Create_quiz/" style="text-decoration: none; color: white;">Criar Quiz</a>
-                        </li>
-                        <li >  
-                            <a href="My_quiz/" style="text-decoration: none; color: white;">Meus Quizs</a>
-                        </li>
-                    </ul>
+                    {% if request.path == "/" %}
+                        <ul class="list-navbar" style="text-decoration: none;">
+                            <li >
+                                <a href="create_user/" style="text-decoration: none; color: white;">Entrar</a>
+                            </li>
+                            
+                                <li >  
+                                    <a href="Create_quiz/" style="text-decoration: none; color: white;">Criar Quiz</a>
+                                </li>
+                            
+                            <li >  
+                                <a href="My_quiz/" style="text-decoration: none; color: white;">Meus Quizs</a>
+                            </li>
+                        </ul>
+                    {% else %}
+                        <ul class="list-navbar" style="text-decoration: none;">
+                            <li >
+                                <a href="/" style="text-decoration: none; color: white;">Voltar</a>
+                            </li>
+                        </ul>
+                    {% endif %}
                  </h2>
 
         </div>

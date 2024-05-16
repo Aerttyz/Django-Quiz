@@ -1,17 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Create User</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
+{% include "Quiz/partials/head.html" %}
 <body>
-    <div class="container mt-5">
-        <h1>Create User</h1>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-primary">Save User</button>
-        </form>
-    </div>
+    {% include "Quiz/partials/header.html" %}
+    <main class="main-content-container">
+        <div class="main-content  main-content-list  container">
+            <div class="container mt-5">
+                <h1>Create User</h1>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Save User</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    
 </body>
+{% include 'Quiz/partials/footer.html' %}
 </html>
