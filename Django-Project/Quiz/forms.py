@@ -1,5 +1,6 @@
 from django import forms
 from .models import Quiz, Question, Option
+from User.models import User
 
 
 class QuizForm(forms.ModelForm):
@@ -34,4 +35,17 @@ class OptionForm(forms.ModelForm):
             'option_text': forms.TextInput(attrs={'class': 'form-control'}),
             'is_correct': forms.CheckboxInput(attrs={'class': 'form-check-input'}),  # noqa: E501
             'question': forms.Select(attrs={'class': 'form-control'}),
+        }
+
+
+class UserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email', 'password']
+        widgets = {
+            'fisrt_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'password': forms.PasswordInput(attrs={'class': 'form-control'}),
+            'is_active': forms.CheckboxInput(attrs={'class': 'form-check-input'}),  # noqa: E501
         }

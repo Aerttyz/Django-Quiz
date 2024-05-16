@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Quiz, Question, Option
-from .forms import QuizForm, QuestionForm, OptionForm
+from .forms import QuizForm, QuestionForm, OptionForm, UserForm
 
 
 def home(request):
@@ -55,3 +55,15 @@ def add_option(request):
         form = OptionForm()
 
     return render(request, 'Quiz/pages/add_option.html', {'form': form})
+
+
+def create_user(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = UserForm()
+
+    return render(request, 'Quiz/pages/create_user.html', {'form': form})

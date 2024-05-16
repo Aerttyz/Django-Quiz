@@ -18,6 +18,9 @@ class Quiz(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(null=True, blank=True)
 
+    def __str__(self):
+        return self.title
+
 
 class Question(models.Model):
     uuid = models.UUIDField(
@@ -30,6 +33,9 @@ class Question(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.question_text
+
 
 class Option(models.Model):
     uuid = models.UUIDField(
@@ -41,3 +47,6 @@ class Option(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.option_text
