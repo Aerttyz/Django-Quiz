@@ -29,10 +29,10 @@ class QuizForm(forms.ModelForm):
 class QuestionForm(forms.ModelForm):
     class Meta:
         model = Question
-        fields = ['question_text', 'quiz_uuid']
+        fields = ['quiz_uuid', 'question_text']
         widgets = {
+            'quiz_uuid': forms.HiddenInput(),
             'question_text': forms.TextInput(attrs={'class': 'form-control'}),
-            'quiz_uuid': forms.Select(attrs={'class': 'form-control'}),
         }
     required_css_class = 'required-field'
 
@@ -50,9 +50,9 @@ class OptionForm(forms.ModelForm):
         model = Option
         fields = ['option_text', 'is_correct', 'question']
         widgets = {
+            'question': forms.HiddenInput(),
             'option_text': forms.TextInput(attrs={'class': 'form-control'}),
             'is_correct': forms.CheckboxInput(attrs={'class': 'form-check-input'}),  # noqa: E501
-            'question': forms.Select(attrs={'class': 'form-control'}),
         }
     required_css_class = 'required-field'
 
